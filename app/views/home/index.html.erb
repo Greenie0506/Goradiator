@@ -1,4 +1,10 @@
 <h1>This is a Test Radiator Page!!!!</h1>
 <h2>Upcoming Events</h2>
 
-<%= @event.time %><%= @event.name %><%= @event.speaker %>
+<% if not @event.present? %>
+  There is no event.
+<% else %>
+  <%= @event.time %><%= @event.name %><%= @event.speaker %>
+<% end %>
+
+
