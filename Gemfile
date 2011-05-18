@@ -7,6 +7,7 @@ gem 'rails', '3.0.7'
 
 gem 'sqlite3'
 gem 'awesome_print'
+gem 'twitter'
 # Use unicorn as the web server
 # gem 'unicorn'
 
