@@ -8,12 +8,12 @@
 <% end %>
 <br />
 <br />
-<% official_tweets(3).each do |r| %>
+<% @handle_tweets.each do |r| %>
   <%= "#{r.from_user}: #{r.text}" %><br />
 <% end %>
 <br />
 <br />
-<% hash_tweets(5).each do |r| %>
+<% @hashtag_tweets.each do |r| %>
   <%= "#{r.from_user}: #{r.text}" %><br />
 <% end %>
 
