@@ -8,14 +8,21 @@
 <% end %>
 <br />
 <br />
-<% @handle_tweets.each do |r| %>
-  <%= "#{r.from_user}: #{r.text}" %><br />
-<% end %>
+<div id="handleTweets">
+  <% @handle_tweets.each do |r| %>
+    <%= "#{r.from_user}: #{r.text}" %><br />
+  <% end %>
+</div>
 <br />
 <br />
-<% @hashtag_tweets.each do |r| %>
-  <%= "#{r.from_user}: #{r.text}" %><br />
+<div id="hashtagTweets">
+  <% @hashtag_tweets.each do |r| %>
+    <%= "#{r.from_user}: #{r.text}" %><br />
+  <% end %>
+</div>
+
+<br />
+<% @gram.each do |gram| %>
+  <%= image_tag gram %>
 <% end %>
-
-
 
