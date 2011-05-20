@@ -1,0 +1,10 @@
+<div id="sponsor">
+  <ul class="hidden">
+    <% @sponsors.each do |sponsor| %>
+      <li>
+      <%= image_tag "#{sponsor['logo']}" %>
+      <h2> <%= sponsor['name'] %> </h2>
+      </li>
+    <% end %>
+  </ul>
+</div>

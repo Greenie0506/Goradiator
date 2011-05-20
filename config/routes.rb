@@ -1,4 +1,7 @@
 GorucoRadiator::Application.routes.draw do
+  resources :events, only: "index"
+  resources :twitter, only: "index"
+  resources :instagram, only: "index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -48,7 +51,7 @@ GorucoRadiator::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-   root :to => "home#index"
+  root :to => "home#index"
 
   # See how all your routes lay out with "rake routes"
 

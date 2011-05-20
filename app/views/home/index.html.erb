@@ -1,28 +1,4 @@
-<h1>This is a Test Radiator Page!!!!</h1>
-<h2>Upcoming Events</h2>
-
-<% if not @event.present? %>
-  There is no event.
-<% else %>
-  <%= @event.time %><%= @event.name %><%= @event.speaker %>
-<% end %>
-<br />
-<br />
-<div id="handleTweets">
-  <% @handle_tweets.each do |r| %>
-    <%= "#{r.from_user}: #{r.text}" %><br />
-  <% end %>
-</div>
-<br />
-<br />
-<div id="hashtagTweets">
-  <% @hashtag_tweets.each do |r| %>
-    <%= "#{r.from_user}: #{r.text}" %><br />
-  <% end %>
-</div>
-
-<br />
-<% @gram.each do |gram| %>
-  <%= image_tag gram %>
-<% end %>
-
+<div id="sponsors" style="float:right; width:auto;"><%= render 'sponsor' %></div>
+<div id="nextEvent" style="float:left;width:auto;"></div><br />
+<div id="twitter" style="width:300px; float:left;"></div>
+<div id="instagram" style="width:442px; float:right;"></div>

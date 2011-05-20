@@ -1,0 +1,12 @@
+  <div id="handleTweets">
+    <% @handle_tweets.each do |r| %>
+      <%= "#{r.from_user}: #{r.text}" %><br /><br />
+    <% end %>
+  </div>
+  <br />
+  <br />
+  <div id="hashtagTweets">
+    <% @hashtag_tweets.each do |r| %>
+      <%= "#{r.from_user}: #{r.text}" %><br /><br />
+    <% end %>
+  </div>

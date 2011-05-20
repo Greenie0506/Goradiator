@@ -7,8 +7,12 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
+  <div class="wrapper">
+  <div id="gorucoLogo" style="float:left; width:auto;">
+    <%= image_tag "goruco.png" %>
+  </div>
 
 <%= yield %>
-
+</div><!--wrapper-->
 </body>
 </html>
