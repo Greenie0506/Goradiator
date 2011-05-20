@@ -1,0 +1,11 @@
+pairs:
+  eh: Edward Hieatt
+  js: Josh Susser; jsusser
+  kf: Kevin Fitzpatrick; kevin
+  ds: David Stevenson; stevend
+  ng: Nicholas Greenfield; Nickg
+  nm: Nicholas Monje; monje
+email:
+  prefix: pair
+  domain: pivotallabs.com
+

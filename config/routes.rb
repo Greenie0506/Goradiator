@@ -1,7 +1,7 @@
 GorucoRadiator::Application.routes.draw do
-  resources :events
-  resources :twitter
-  resources :instagram
+  resources :events, :only => "index"
+  resources :twitter, :only => "index"
+  resources :instagram, :only => "index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
