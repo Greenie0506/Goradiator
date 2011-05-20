@@ -5,8 +5,18 @@ instagram_tag: RailsConf
 
 sponsors:
   -
-    name: Pivotal Labs
     logo: pivotallabs-logo.png
+
+events:
   -
-    name: Definitely Not Pivotal Labs
-    logo: pivotallabs-logo.png
+    time: 2011-6-4 10:00:00 -0400 
+    name: Meet and Greet
+    speaker: 
+  -
+    time: 2011-6-4 11:00:00 -0400
+    name: Introduction to Ruby
+    speaker: Josh Knowles
+  - 
+    time: 2011-6-4 11:55:00 -0400
+    name: Lunch break
+    speaker: 
