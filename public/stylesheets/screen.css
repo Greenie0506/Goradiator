@@ -1,4 +1,64 @@
+*{
+  margin:0;
+  padding:0;
+}
+
+body {
+  overflow: hidden;
+}
+
 .wrapper{
-  width:1024px;
+  height:600px;
+  width:800px;
   margin:0 auto;
+}
+
+#logo{
+  width:35%;
+  height:15%;
+  background:red;
+  float:left;
+  margin:7px 0 0 7px;
+
+}
+
+#sponsor{
+  float:right;
+  width:60%;
+  height:15%;
+  margin:7px 5px 0 0;
+}
+
+#sponsor ul{
+  list-style-type: none;
+}
+
+#time {
+  float: left;
+  width: 35%;
+  height: 75px;
+  margin: 5px 0 0 7px;
+  background: black;
+}
+
+#event{
+  width:62%;
+  float:right;
+  height:75px;
+  margin: 5px 7px 0 0;
+  background:green;
+}
+
+#instagram {
+  float: left;
+  width: 50%;
+  background: blue;
+  margin: 5px 0 0 7px;
+}
+
+#twitter {
+  float: right;
+  width: 47%;
+  background: yellow;
+  margin: 5px 7px 0 0;
 }

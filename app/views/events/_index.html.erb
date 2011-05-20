@@ -1,7 +1,7 @@
-<h1>The next event is:</h1>
+The next event is:
 <% if not @event.present? %>
-  <h1>Ands thats our show folks!</h2>
+  "Ands thats our show folks!"
 <% else %>
-  <h1><%= @event.time %>: <%= @event.name %> <%= @event.speaker %></h1>
+  <%= @event.time %>: <%= @event.name %> <%= @event.speaker %>
 <% end %>
 <br />

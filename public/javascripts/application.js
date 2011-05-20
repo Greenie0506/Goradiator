@@ -1,7 +1,7 @@
 $(document).ready(function(){
 $('#twitter').load('/twitter.js');
 $('#instagram').load('/instagram.js');
-$('#nextEvent').load('/events.js');
+$('#event').load('/events.js');
 });
 setInterval(function() {
   $('#twitter').load('/twitter.js');
@@ -12,5 +12,5 @@ setInterval(function() {
 }, 20000);
 
 setInterval(function(){
-  $('#nextEvent').load('/event.js');
+  $('#event').load('/event.js');
 }, 600000);
