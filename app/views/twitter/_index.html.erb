@@ -1,12 +1,15 @@
-  <div id="handleTweets">
-    <% @handle_tweets.each do |r| %>
-      <%= "#{r.from_user}: #{r.text}" %><br /><br />
-    <% end %>
-  </div>
-  <br />
-  <br />
-  <div id="hashtagTweets">
+<!-- <div id="handleTweets">
+  <% @handle_tweets.each do |r| %>
+    <%= "#{r.from_user}: #{r.text}" %><br /><br />
+  <% end %>
+</div> -->
+<div id="hashtagTweets">
+  <table>
     <% @hashtag_tweets.each do |r| %>
-      <%= "#{r.from_user}: #{r.text}" %><br /><br />
+      <tr>
+        <td><%= image_tag r.profile_image_url %></td>
+        <td><%= "#{r.from_user}: #{r.text}" %></td>
+      </tr>
     <% end %>
-  </div>
+  </table>
+</div>
