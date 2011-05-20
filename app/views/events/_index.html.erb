@@ -1,8 +1,12 @@
+<div id="event_countdown_text">Next event in:</div>
 <% if not @event.present? %>
   "Ands thats our show folks!"
 <% else %>
   <div id="countdown"> <%= @event.time - Time.now %></div>
-  <div id="eventDescription"> <%= @event.name %> <%= @event.speaker %></div>
+  <div id="eventDescription"> <%= @event.name %></div> <br />
+  <% if @event.speaker %>
+    <div id="eventSpeaker"> by <%= @event.speaker %> </div>
+    <%end%>
 <% end %>
 <script type="text/javascript">
   countdown = $('#countdown').html() - 0;

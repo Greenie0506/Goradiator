@@ -42,6 +42,9 @@ setInterval(function(){
 setInterval(function(){
   countdown = countdown - 1;
   $('#countdown').html(prettyTime(countdown));
+  if (countdown < 1) {
+    $('#event').load('/events.js');
+  }
 }, 1000);
 
 function prettyTime (time) {
