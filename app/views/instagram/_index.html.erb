@@ -1,3 +1,9 @@
-<% @instagram_images.each do |image| %>
-  <%= image_tag image, :width => 200 %>
-<% end %>
+<ul>
+  <% @instagram_images.each do |image| %>
+    <li class='hidden'> <%= image_tag image, :width => 320, :height => 320 %> </li>
+  <% end %>
+</ul>
+
+<script type="text/javascript">
+  $('#instagram ul li:first').toggleClass('hidden').toggleClass('visible');
+</script>
