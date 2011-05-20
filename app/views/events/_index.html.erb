@@ -1,8 +1,10 @@
-The next event is:
 <% if not @event.present? %>
   "Ands thats our show folks!"
 <% else %>
-  <div id="countdown"> <%= @event.time - Time.now %></div>:
-  <%= @event.name %> <%= @event.speaker %>
+  <div id="countdown"> <%= @event.time - Time.now %></div>
+  <div id="eventDescription"> <%= @event.name %> <%= @event.speaker %></div>
 <% end %>
-<br />
+<script type="text/javascript">
+  countdown = $('#countdown').html() - 0;
+  $('#countdown').html(prettyTime(countdown));
+</script>  
