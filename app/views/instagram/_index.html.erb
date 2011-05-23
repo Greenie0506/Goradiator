@@ -1,6 +1,4 @@
-<div id="instagramText">
-  Instagram Tag: <%= APP_CONFIG['instagram_tag'] %>
-</div>
+<h4>Instagram Tag: <%= APP_CONFIG['instagram_tag'] %></h4>
 <ul>
   <% @instagram_images.each do |image| %>
     <li class='hidden'> <%= image_tag image %> </li>

@@ -1,6 +1,4 @@
-<div id="twitterText">
-  <%= "@#{APP_CONFIG['twitter_handle']}" %>
-</div>
+<h4><%= "@#{APP_CONFIG['twitter_handle']}" %></h4>
 <div id="handleTweets">
   <% @handle_tweets.each do |r| %>
     <%= "#{r.from_user}: #{r.text}" %><br /><br />
@@ -10,6 +8,7 @@
 <div id="twitterText">
   <%= "\##{APP_CONFIG['twitter_hashtag']}" %>
 </div>
+
 <div id="hashtagTweets">
   <table>
     <% @hashtag_tweets.each do |r| %>

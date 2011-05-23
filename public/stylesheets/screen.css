@@ -1,132 +1,115 @@
-*{
+* {
   margin:0;
   padding:0;
 }
 
 body {
   overflow: hidden;
-  font-size:12px;
-  background:url(../images/bg.png) repeat;
+  font-size: 12px;
+  background: url(../images/bg.png) repeat;
 }
 
-.wrapper{
-  width:800px;
-  margin:0 auto;
+/**********************/
+/*    Page Layout     */
+/**********************/
+#wrap {
+  margin: auto;
+  width: 800px;
 }
 
-#logo{
-  width:350px;
-  height:87px;
-  float:left;
-  margin:7px 0 0 7px;
+#header {
+  float: left;
+  margin: 0 0 10px 0;
+  width: 100%;
 }
 
-#sponsor{
-  float:right;
-  width:433px;
-  height:87px;
-  margin:7px 5px 0 0;
+#logo {
+  float: left;
 }
 
-#sponsor ul{
-  list-style-type: none;
+#sponsor {
+  display: inline;
+  float: right;
+  list-style: none;
+  vertical-align: bottom;
 }
 
-#sponsor ul li {
-  position: absolute;
-  right: 7px;
-  top: 7px;
-}
-
-#sponsor ul li img {
+#sponsor img {
   height: 75px;
   margin: 5px 0 0 7px;
+}
 
+#logo {
+  width:350px;
+  height:87px;
+}
+
+/**********************/
+/*    User Content    */
+/**********************/
+#event {
+  font-size: 2em;
+  margin: 30px 0 20px 0;
+}
+
+#user_content {
+  float: left;
+  margin: 0 0 10px 0;
+  width: 100%;
+}
+
+#user_content .left {
+  float: left;
+  width: 50%;
+}
+
+#user_content .right {
+  float: left;
+  width: 50%;
+}
+
+#user_content .right .content {
+  padding: 0 0 0 4px;
+}
+
+#user_content .left .content {
+  padding: 0 4px 0 0;
 }
 
 .hidden {
-  visibility: hidden;
+  display: none;
 }
 
 .visible {
-  visibility: visible
-}
-
-#event {
-  width: 786px;
-  height: 75px;
-  margin: 0px 7px 0 7px;
-
-}
-
-
-#countdown {
-  float: left;
-  width: 275px;
-  height: 75px;;
-  font-size: 49px;
-}
-
-#eventDescription{
-  width: 63%;
-  text-align: right;
-  float:right;
-  margin: 0 0 0 0;
-  height: 55px;
-  font-size: 49px;
-}
-
-#eventSpeaker {
-  width: 63%;
-  text-align: right;
-  float: right;
-  height: 20px;
-  font-size: 14px;
-  margin: 0 0 0 0;
-}
-
-#instagram {
-  float: left;
-  width: 50%;
-  margin: 5px 0 0 7px;
+  display: inline;
 }
 
 #instagram ul {
   list-style: none;
 }
 
-#instagram ul li{
-  position: absolute;
-  bottom: 12px;
-  margin: 5px 0 5px 0;
-}
-
 #instagram img {
   width: 350px;
 }
 
-#instagramText {
-
-}
-
 #twitter {
-  float: right;
-  width: 48%;
-  height:250px;
-  margin: 7px 7px 0 0;
+
 }
 
 #twitter #hashtagTweets table td {
   vertical-align: top;
 }
 
-#foursquare{
-  float: right;
-  width:380px;
-  height:200px;
-  }
+#foursquare {
+}
 
 #foursquare img{
   width:50px;
 }
 
+/**********************/
+/*        Misc        */
+/**********************/
+.clear {
+  clear: both;
+}

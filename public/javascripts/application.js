@@ -1,4 +1,10 @@
-var countdown;
+var countdown; //initial value grabbed in event partial (for page loading convenience)
+//times in seconds
+var twitterReload = 20;
+var instagramReload = 20;
+var foursquareReload = 100;
+var imageCycle = 5;
+
 $(document).ready(function(){
   $('#twitter').load('/twitter.js');
   $('#instagram').load('/instagram.js');
@@ -7,33 +13,35 @@ $(document).ready(function(){
   $('#foursquare').load('/foursquare.js');
 });
 
+//sponsor image cycling
+setInterval(function () {
+  var visibleSponsor = $('#sponsor .visible');
 
-setInterval(function(){
-  var visibleSponsor = $('#sponsor ul li.visible');
-  if (visibleSponsor.is($('#sponsor ul li:last'))) {
-    $('#sponsor ul li:first').toggleClass('hidden').toggleClass('visible');
-  } else {
+  if (visibleSponsor.is($('#sponsor li:last'))) {
+    $('#sponsor li:first').toggleClass('hidden').toggleClass('visible');
+  }
+  else {
     visibleSponsor.next().toggleClass('hidden').toggleClass('visible');
-  };
+  }
   visibleSponsor.toggleClass('hidden').toggleClass('visible');
-}, 5000);
+}, imageCycle * 1000);
 
+//twitter ajax
 setInterval(function() {
   $('#twitter').load('/twitter.js');
-}, 20000);
+}, twitterReload * 1000);
 
+//instagram ajax
 setInterval(function() {
   $('#instagram').load('/instagram.js');
-}, 50000);
+}, instagramReload * 1000);
 
-setInterval(function(){
-  $('#event').load('/events.js');
-}, 600000);
+//foursquare image cycling
+//setInterval(function(){
+  //$('#foursquare').load('/foursquare.js');
+//}, foursquareReload * 1000);
 
-setInterval(function(){
-  $('#foursquare').load('/foursquare.js');
-}, 1000);
-
+//
 setInterval(function(){
   var visibleImage = $('#instagram ul li.visible');
   if (visibleImage.is($('#instagram ul li:last'))) {
@@ -42,7 +50,7 @@ setInterval(function(){
     visibleImage.next().toggleClass('hidden').toggleClass('visible');
   }
   visibleImage.toggleClass('hidden').toggleClass('visible');
-}, 5000);
+}, imageCycle * 1000);
 
 setInterval(function(){
   countdown = countdown - 1;

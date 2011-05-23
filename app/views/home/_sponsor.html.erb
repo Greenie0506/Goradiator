@@ -1,10 +1,7 @@
-<div id="sponsor">
-  <ul>
-    <% @sponsors.each do |sponsor| %>
-      <li class="hidden">
-      <%= image_tag "#{sponsor['logo']}" %>
-      <h2> <%= sponsor['name'] %> </h2>
-      </li>
-    <% end %>
-  </ul>
-</div>
+<ul id="sponsor">
+  <% @sponsors.each_with_index do |sponsor, i| %>
+    <li class="<%= i == 0 ? "visible" : "hidden" %>">
+    <%= image_tag "#{sponsor['logo']}" %>
+    </li>
+  <% end %>
+</ul>
