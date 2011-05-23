@@ -1,21 +1,22 @@
 <h4><%= "@#{APP_CONFIG['twitter_handle']}" %></h4>
-<div id="handleTweets">
+<table>
   <% @handle_tweets.each do |r| %>
-    <%= "#{r.from_user}: #{r.text}" %><br /><br />
+    <tr>
+      <td><%= image_tag r.profile_image_url %></td>
+      <td><%= "#{r.from_user}: #{r.text}" %></td>
+    </tr>
   <% end %>
-</div>
+</table>
 
-<div id="twitterText">
+<h4 id="twitterText">
   <%= "\##{APP_CONFIG['twitter_hashtag']}" %>
-</div>
+</h4>
 
-<div id="hashtagTweets">
-  <table>
-    <% @hashtag_tweets.each do |r| %>
-      <tr>
-        <td><%= image_tag r.profile_image_url %></td>
-        <td><%= "#{r.from_user}: #{r.text}" %></td>
-      </tr>
-    <% end %>
-  </table>
-</div>
+<table>
+  <% @hashtag_tweets.each do |r| %>
+    <tr>
+      <td><%= image_tag r.profile_image_url %></td>
+      <td><%= "#{r.from_user}: #{r.text}" %></td>
+    </tr>
+  <% end %>
+</table>

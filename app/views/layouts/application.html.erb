@@ -8,13 +8,15 @@
   </head>
   <body>
     <div id="wrap">
-      <div id="header">
-        <%= image_tag 'logo.png', :id => "logo" %>
-        <%= render 'sponsor' %>
-      </div>
-      <div class="clear"></div>
+      <div id="wrap_content">
+        <div id="header">
+          <%= image_tag 'logo.png', :id => "logo" %>
+          <%= render 'sponsor' %>
+        </div>
+        <div class="clear"></div>
 
-      <%= yield %>
+        <%= yield %>
+      </div>
     </div>
   </body>
 </html>

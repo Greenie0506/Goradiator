@@ -9,12 +9,21 @@ body {
   background: url(../images/bg.png) repeat;
 }
 
+h1 { font-size: 3em; }
+h2 { font-size: 2.5em; }
+h3 { font-size: 2em; }
+h4 { font-size: 1.1em; }
+
 /**********************/
 /*    Page Layout     */
 /**********************/
 #wrap {
   margin: auto;
   width: 800px;
+}
+
+#wrap_content {
+  padding: 4px 8px;
 }
 
 #header {
@@ -48,8 +57,8 @@ body {
 /*    User Content    */
 /**********************/
 #event {
-  font-size: 2em;
-  margin: 30px 0 20px 0;
+  font-size: 2.2em;
+  margin: 0 0 10px 0;
 }
 
 #user_content {
@@ -89,14 +98,17 @@ body {
 }
 
 #instagram img {
+  margin: 5px 0 0 0;
   width: 350px;
 }
 
-#twitter {
-
+#twitter table img {
+  margin: 0 8px 0 0;
+  width: 48px;
 }
 
-#twitter #hashtagTweets table td {
+#twitter td {
+  padding: 0 0 5px 0;
   vertical-align: top;
 }
 

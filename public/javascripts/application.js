@@ -1,8 +1,8 @@
 var countdown; //initial value grabbed in event partial (for page loading convenience)
 //times in seconds
-var twitterReload = 20;
+var twitterReload = 24;
 var instagramReload = 20;
-var foursquareReload = 100;
+var foursquareReload = 8;
 var imageCycle = 5;
 
 $(document).ready(function(){
