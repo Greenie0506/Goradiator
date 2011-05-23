@@ -4,6 +4,7 @@ $(document).ready(function(){
   $('#instagram').load('/instagram.js');
   $('#event').load('/events.js');
   $('#sponsor ul li:first').toggleClass('hidden').toggleClass('visible');
+  $('#foursquare').load('/foursquare.js');
 });
 
 
@@ -28,6 +29,10 @@ setInterval(function() {
 setInterval(function(){
   $('#event').load('/events.js');
 }, 600000);
+
+setInterval(function(){
+  $('#foursquare').load('/foursquare.js');
+}, 1000);
 
 setInterval(function(){
   var visibleImage = $('#instagram ul li.visible');

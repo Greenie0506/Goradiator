@@ -5,6 +5,7 @@
 
 body {
   overflow: hidden;
+  font-size:12px;
   background:url(../images/bg.png) repeat;
 }
 
@@ -37,10 +38,10 @@ body {
   top: 7px;
 }
 
-#sponsor ul li img {  height: 75px;
+#sponsor ul li img {
+  height: 75px;
   margin: 5px 0 0 7px;
 
-  height: 15%;
 }
 
 .hidden {
@@ -111,10 +112,21 @@ body {
 #twitter {
   float: right;
   width: 48%;
-  height:390px;
+  height:250px;
   margin: 7px 7px 0 0;
 }
 
 #twitter #hashtagTweets table td {
   vertical-align: top;
 }
+
+#foursquare{
+  float: right;
+  width:380px;
+  height:200px;
+  }
+
+#foursquare img{
+  width:50px;
+}
+

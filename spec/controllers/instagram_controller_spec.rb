@@ -12,6 +12,7 @@ describe InstagramController do
       instagram_response.stub_chain(:[], :first, :collect).and_return(double_instagram_images)
       get 'index'
     end
+    
     it "should get the most recent instagram photos with the tag" do
       assigns(:instagram_images).should == "Fake image"
     end
