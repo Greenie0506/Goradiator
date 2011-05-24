@@ -22,10 +22,10 @@ describe Events do
       @e1 = Factory.create(:events, :time => Time.now + 1.hour)
       @e2 = Factory.create(:events, :time => Time.now + 2.hour)
     end
-    
+
     it "should be the next one" do
       Events.upcoming.should_not == @e2
-      Events.upcoming.should == @e1
+      Events.upcoming.should == @http://localhost:3000/e1
     end
 
     it "should be after now" do

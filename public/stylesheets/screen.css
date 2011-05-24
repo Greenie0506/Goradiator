@@ -1,19 +1,8 @@
-* {
-  margin:0;
-  padding:0;
-}
-
 body {
   overflow: hidden;
-  font-size: 12px;
-  background: url(../images/bg.png) repeat;
 }
 
-h1 { font-size: 3em; }
-h2 { font-size: 2.5em; }
-h3 { font-size: 2em; }
 h4 { font-size: 1.1em; }
-
 /**********************/
 /*    Page Layout     */
 /**********************/
@@ -85,51 +74,7 @@ h4 { font-size: 1.1em; }
   padding: 0 4px 0 0;
 }
 
-.hidden {
-  display: none;
-}
-
-.visible {
-  display: inline;
-}
-
-#instagram ul {
-  list-style: none;
-}
-
 #instagram img {
   margin: 5px 0 0 0;
   width: 350px;
-}
-
-#twitter table img {
-  margin: 0 8px 0 0;
-  width: 48px;
-}
-
-#twitter td {
-  padding: 0 0 5px 0;
-  vertical-align: top;
-}
-
-#foursquare {
-}
-
-#foursquare .normal {
-  width: 50px;
-}
-
-#foursquare .small {
-  width: 40px;
-}
-
-#foursquare .tiny {
-  width: 30px;
-}
-
-/**********************/
-/*        Misc        */
-/**********************/
-.clear {
-  clear: both;
 }

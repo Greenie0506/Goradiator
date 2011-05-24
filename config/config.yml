@@ -14,13 +14,13 @@ sponsors:
 events:
   -
     time: 2011-5-20 17:00:00 -0400 
-    name: Meet and Greet
+    title: Meet and Greet
     speaker: 
   -
     time: 2011-6-4 11:00:00 -0400
-    name: Introduction to Ruby
+    title: Introduction to Ruby
     speaker: Josh Knowles
   - 
     time: 2011-6-4 11:55:00 -0400
-    name: Lunch break
+    title: Lunch break
     speaker: 

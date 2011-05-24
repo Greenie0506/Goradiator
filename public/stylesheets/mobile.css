@@ -1,0 +1,67 @@
+body {
+  text-align: center;
+}
+
+table {
+  text-align: left;
+}
+
+h4 { font-size: 2em; }
+
+/**********************/
+/*    Page Layout     */
+/**********************/
+#wrap {
+  margin: auto;
+}
+
+#wrap_content {
+  padding: 4px 8px;
+}
+
+#header img {
+  display: block;
+}
+
+#logo {
+  margin: 0 0 5px 0;
+  width: 97%;
+}
+
+#sponsor {
+  list-style: none;
+}
+
+#sponsor img {
+  height: 75px;
+  margin: auto;
+}
+
+/**********************/
+/*    User Content    */
+/**********************/
+#event {
+  margin: 5px 0 10px 0;
+}
+
+#eventTitle {
+  display: block;
+}
+
+#speaker {
+  display: block;
+  font-size: 0.8em;
+}
+
+#startsIn {
+  font-size: 0.8em;
+}
+
+#countdown {
+  font-size: 0.8em;
+}
+
+#instagram img {
+  margin: 5px 0 0 0;
+  width: 95%;
+}

@@ -1,11 +1,11 @@
 <% if @event.blank? %>
   "Ands thats our show folks!"
 <% else %>
-  <%= @event.name %>
+  <span id="eventTitle"> <%= @event.title %> </span>
   <% if @event.speaker %>
     <span id="speaker"> by <%= @event.speaker %> </span>
-  <%end%>
-  starts in 
+  <% end %>
+  <span id="startsIn"> starts in </span>
   <span id="countdown"><%= @event.time - Time.now %></span>
 <% end %>
 
