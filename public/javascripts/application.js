@@ -15,10 +15,10 @@ var twitter_hash_reload = ms_in_hour / twitter_hash_max;
 var twitter_handle_reload = ms_in_hour / twitter_handle_max;
 
 $(document).ready(function () {
+  $('#event').load('/events');
   $('#twitterHashtag').load('/twitter/hashtag');
   $('#twitterHandle').load('/twitter/handle');
   $('#instagram').load('/instagram');
-  $('#event').load('/events');
   $('#sponsor ul li:first').toggleClass('hidden').toggleClass('visible');
   $('#foursquare').load('/foursquare');
 
