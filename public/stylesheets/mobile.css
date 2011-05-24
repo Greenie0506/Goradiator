@@ -1,5 +1,6 @@
 body {
   text-align: center;
+  background: red;
 }
 
 table {
@@ -64,4 +65,16 @@ h4 { font-size: 2em; }
 #instagram img {
   margin: 5px 0 0 0;
   width: 95%;
+}
+
+#foursquare .normal {
+  width: 25%;
+}
+
+#foursquare .small {
+  width: 20%;
+}
+
+#foursquare .tiny {
+  width: 16%;
 }

@@ -3,7 +3,7 @@ var ms_in_hour = 60 * 60 * 1000;
 
 //times in seconds
 var instagramReload = 20;
-var foursquareReload = 8;
+var foursquareReload = 30;
 var imageCycle = 5;
 
 // per/hour

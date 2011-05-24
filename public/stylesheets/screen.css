@@ -78,3 +78,15 @@ h4 { font-size: 1.1em; }
   margin: 5px 0 0 0;
   width: 350px;
 }
+
+#foursquare .normal {
+  width: 50px;
+}
+
+#foursquare .small {
+  width: 40px;
+}
+
+#foursquare .tiny {
+  width: 30px;
+}

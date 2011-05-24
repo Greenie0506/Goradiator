@@ -29,17 +29,7 @@ h3 { font-size: 2em; }
   vertical-align: top;
 }
 
-#foursquare .normal {
-  width: 50px;
-}
 
-#foursquare .small {
-  width: 40px;
-}
-
-#foursquare .tiny {
-  width: 30px;
-}
 
 .hidden {
   display: none;
