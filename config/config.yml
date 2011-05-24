@@ -13,14 +13,45 @@ sponsors:
 
 events:
   -
-    time: 2011-5-20 17:00:00 -0400 
-    title: Meet and Greet
-    speaker: 
+    time: 2011-6-4 9:00:00 -0400
+    title: Registration and Breakfast
   -
-    time: 2011-6-4 11:00:00 -0400
-    title: Introduction to Ruby
-    speaker: Josh Knowles
-  - 
-    time: 2011-6-4 11:55:00 -0400
-    title: Lunch break
-    speaker: 
+    time: 2011-6-4 9:45:00 -0400
+    title: Opening Remarks
+  -
+    time: 2011-6-4 10:00:00 -0400
+    title: Fewer Constraints More Concurrency
+    speaker: Ryan Smith
+  -
+    time: 2011-6-4 10:55:00 -0400
+    title: Less - The Path to Better Design
+    speaker: Sandi Metz
+  -
+    time: 2011-6-4 11:50:00 -0400
+    title: Blow Up Your Views
+    speaker: Jeff Casimir
+  -
+    time: 2011-6-4 12:35:00 -0400
+    title: Lunch
+  -
+    time: 2011-6-4 13:45:00 -0400
+    title: "HysteriaEngine: Ruby Does Violence in the Name of Science"
+    speaker: Casey Rosenthal
+  -
+    time: 2011-6-4 14:40:00 -0400
+    title: CoffeeScript
+    speaker: Jeremy Ashkenas
+  -
+    time: 2011-6-4 15:25:00 -0400
+    title: Break
+  -
+    time: 2011-6-4 10:55:00 -0400
+    title: "Kicking it old school: How your relation database's built-in features can make your code cleaner and your application faster"
+    speaker: John Crepezzi & Mat Brown
+  -
+    time: 2011-6-4 10:55:00 -0400
+    title: Something Awesome
+    speaker: Evan Phoenix
+  -
+    time: 2011-6-4 10:55:00 -0400
+    title: RejectConf
