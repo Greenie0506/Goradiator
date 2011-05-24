@@ -3,7 +3,7 @@
   <% @hashtag_tweets.each do |r| %>
     <tr>
       <td><%= image_tag r.profile_image_url %></td>
-      <td><%= "#{r.from_user}: #{r.text}" %></td>
+      <td><span id="twitterUser"><%= "#{r.from_user}"%></span>: <%="#{r.text}" %></td>
     </tr>
   <% end %>
 </table>

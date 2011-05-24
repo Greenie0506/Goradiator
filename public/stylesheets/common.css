@@ -29,7 +29,9 @@ h3 { font-size: 2em; }
   vertical-align: top;
 }
 
-
+#twitterUser {
+  font-weight: bold;
+}
 
 .hidden {
   display: none;
