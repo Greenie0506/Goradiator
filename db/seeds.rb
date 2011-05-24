@@ -12,7 +12,7 @@
 Events.delete_all
 
 APP_CONFIG['events'].each do |event|
-  Events.create(:time => Time.parse(event['time']), :name => event['name'], :speaker => event['speaker'])
+  Events.create(:time => Time.parse(event['time']), :title => event['title'], :speaker => event['speaker'])
 end
 
 

@@ -3,17 +3,17 @@ require 'spec_helper'
 describe Events do
   context "creating an event" do
     before do
-      @event = Factory.create(:events)
+      @event = Factory.build(:events)
     end
 
     it "should not be nil" do
-      @event.should_not be_nil
+      @event.valid?.should be(true)
     end
 
-    it "should have a name, time, and speaker" do
-      @event.name.should_not be_nil
-      @event.speaker.should_not be_nil
-      @event.time.should_not be_nil
+    it "should have a name and time" do
+      @event.title = "How to run a bannana stand"
+      @event.time = Time.now
+      @event.valid?.should be(true)
     end
   end
 
@@ -25,7 +25,7 @@ describe Events do
 
     it "should be the next one" do
       Events.upcoming.should_not == @e2
-      Events.upcoming.should == @http://localhost:3000/e1
+      Events.upcoming.should == @e1
     end
 
     it "should be after now" do

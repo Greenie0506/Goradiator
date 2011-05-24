@@ -1,4 +1,6 @@
 class Events < ActiveRecord::Base
+  validates_presence_of :title, :time
+  validates_uniqueness_of :time
 
   default_scope :order => 'time ASC'
 
