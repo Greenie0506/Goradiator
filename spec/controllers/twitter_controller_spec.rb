@@ -11,9 +11,11 @@ describe TwitterController do
       double_twitter_search.stub(:clear)
       get 'index'
     end
+
     it "should get the tweets with the configured hashtag" do
       assigns(:hashtag_tweets).should == "Fake Tweet"
     end
+    
     it "should get the events twitter handle tweets" do
       assigns(:handle_tweets).should == "Fake Tweet"
     end

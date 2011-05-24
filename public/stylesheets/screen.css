@@ -115,8 +115,16 @@ h4 { font-size: 1.1em; }
 #foursquare {
 }
 
-#foursquare img{
-  width:50px;
+#foursquare .normal {
+  width: 50px;
+}
+
+#foursquare .small {
+  width: 40px;
+}
+
+#foursquare .tiny {
+  width: 30px;
 }
 
 /**********************/

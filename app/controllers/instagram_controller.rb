@@ -5,7 +5,7 @@ class InstagramController < ApplicationController
     instagram_response = JSON.parse(instagram_response)
     @instagram_images = instagram_response['data'].first(10).collect { |img| img["images"]["standard_resolution"]["url"] }
     respond_to do |format|
-      format.js { render :partial => 'index' }
+      format.html { render :partial => 'index' }
     end
   end
 end

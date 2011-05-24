@@ -1,6 +1,9 @@
 GorucoRadiator::Application.routes.draw do
   resources :events, :only => "index"
-  resources :twitter, :only => "index"
+  resources :twitter, :only => "" do
+      get 'hashtag', :on => :collection
+      get 'handle', :on => :collection
+  end
   resources :instagram, :only => "index"
   resources :foursquare, :only => "index"
   # The priority is based upon order of creation:

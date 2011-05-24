@@ -1,4 +1,4 @@
 <h4>People Checked In</h4>
 <% @foursquare_herenow.each do |herenow| %>
-  <%= image_tag herenow['user']['photo'] %>
+  <%= avatar herenow['user']['photo'], @foursquare_herenow.length %>
 <% end %>

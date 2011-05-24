@@ -1,17 +1,42 @@
 var countdown; //initial value grabbed in event partial (for page loading convenience)
+var ms_in_hour = 60 * 60 * 1000;
+
 //times in seconds
-var twitterReload = 24;
 var instagramReload = 20;
 var foursquareReload = 8;
 var imageCycle = 5;
 
-$(document).ready(function(){
-  $('#twitter').load('/twitter.js');
-  $('#instagram').load('/instagram.js');
-  $('#event').load('/events.js');
+// per/hour
+var twitter_max = 130;
+var twitter_hash_percent = .75;
+var twitter_hash_max = twitter_max * twitter_hash_percent;
+var twitter_handle_max = twitter_max - twitter_hash_max; 
+var twitter_hash_reload = ms_in_hour / twitter_hash_max;
+var twitter_handle_reload = ms_in_hour / twitter_handle_max;
+
+$(document).ready(function () {
+  $('#twitterHashtag').load('/twitter/hashtag');
+  $('#twitterHandle').load('/twitter/handle');
+  $('#instagram').load('/instagram');
+  $('#event').load('/events');
   $('#sponsor ul li:first').toggleClass('hidden').toggleClass('visible');
-  $('#foursquare').load('/foursquare.js');
+  $('#foursquare').load('/foursquare');
+
+  init_reloads();
 });
+
+function reloadSection(selector, url, interval) {
+  setInterval(function() {
+    $(selector).load(url);
+  }, interval);
+}
+
+function init_reloads() {
+  reloadSection('#twitterHashtag', '/twitter/hashtag', twitter_hash_reload);
+  reloadSection('#twitterHandle', '/twitter/handle', twitter_handle_reload);
+  reloadSection('#instagram', '/instagram', instagramReload * 1000);
+  reloadSection('#foursquare', '/foursquare', foursquareReload * 1000);
+}
 
 //sponsor image cycling
 setInterval(function () {
@@ -26,22 +51,7 @@ setInterval(function () {
   visibleSponsor.toggleClass('hidden').toggleClass('visible');
 }, imageCycle * 1000);
 
-//twitter ajax
-setInterval(function() {
-  $('#twitter').load('/twitter.js');
-}, twitterReload * 1000);
-
-//instagram ajax
-setInterval(function() {
-  $('#instagram').load('/instagram.js');
-}, instagramReload * 1000);
-
-//foursquare image cycling
-//setInterval(function(){
-  //$('#foursquare').load('/foursquare.js');
-//}, foursquareReload * 1000);
-
-//
+//cycle images (sponsor and photo stream)
 setInterval(function(){
   var visibleImage = $('#instagram ul li.visible');
   if (visibleImage.is($('#instagram ul li:last'))) {
@@ -56,7 +66,7 @@ setInterval(function(){
   countdown = countdown - 1;
   $('#countdown').html(prettyTime(countdown));
   if (countdown < 1) {
-    $('#event').load('/events.js');
+    $('#event').load('/events');
   }
 }, 1000);
 

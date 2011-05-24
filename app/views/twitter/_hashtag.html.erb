@@ -1,0 +1,9 @@
+<h4><%= "\##{APP_CONFIG['twitter_hashtag']}" %></h4>
+<table>
+  <% @hashtag_tweets.each do |r| %>
+    <tr>
+      <td><%= image_tag r.profile_image_url %></td>
+      <td><%= "#{r.from_user}: #{r.text}" %></td>
+    </tr>
+  <% end %>
+</table>

@@ -11,5 +11,32 @@ require 'spec_helper'
 #   end
 # end
 describe FoursquareHelper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context "assign a css class" do
+    it "should be called normal when there are 10 or less avatars" do
+      avatar_img = helper.avatar("avatar.jpg", 10)
+
+      node = Nokogiri::XML.parse(avatar_img).child
+      node.attribute("class").value.should include("normal")
+      node.attribute("class").value.should_not include("small")
+      node.attribute("class").value.should_not include("tiny")
+    end
+
+    it "should be called small when there are between 11 and 20 avatars" do
+      avatar_img = helper.avatar("avatar.jpg", 20)
+
+      node = Nokogiri::XML.parse(avatar_img).child
+      node.attribute("class").value.should_not include("normal")
+      node.attribute("class").value.should include("small")
+      node.attribute("class").value.should_not include("tiny")
+    end
+
+    it "should be called xsmall when there are more than 21 avatars" do
+      avatar_img = helper.avatar("avatar.jpg", 21)
+
+      node = Nokogiri::XML.parse(avatar_img).child
+      node.attribute("class").value.should_not include("normal")
+      node.attribute("class").value.should_not include("small")
+      node.attribute("class").value.should include("tiny")
+    end
+  end
 end
