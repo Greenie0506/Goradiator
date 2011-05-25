@@ -13,4 +13,5 @@ group :test, :development do
   gem 'rspec-rails', '~> 2.4'
   gem 'factory_girl'
   gem 'ruby-debug19'
+  gem 'fuubar'
 end

@@ -44,6 +44,10 @@ GEM
       rack (< 2, >= 1.1.0)
     faraday_middleware (0.6.3)
       faraday (~> 0.6.0)
+    fuubar (0.0.5)
+      rspec (~> 2.0)
+      rspec-instafail (~> 0.1.4)
+      ruby-progressbar (~> 0.0.10)
     hashie (1.0.0)
     httpclient (2.2.0.2)
     i18n (0.5.0)
@@ -92,6 +96,7 @@ GEM
     rspec-core (2.6.0)
     rspec-expectations (2.6.0)
       diff-lcs (~> 1.1.2)
+    rspec-instafail (0.1.7)
     rspec-mocks (2.6.0)
     rspec-rails (2.6.0)
       actionpack (~> 3.0)
@@ -106,6 +111,7 @@ GEM
       columnize (>= 0.3.1)
       linecache19 (>= 0.5.11)
       ruby-debug-base19 (>= 0.11.19)
+    ruby-progressbar (0.0.10)
     ruby_core_source (0.1.5)
       archive-tar-minitar (>= 0.5.2)
     simple_oauth (0.1.5)
@@ -129,6 +135,7 @@ PLATFORMS
 DEPENDENCIES
   awesome_print
   factory_girl
+  fuubar
   httpclient
   jquery-rails
   json
