@@ -18,4 +18,13 @@ class TwitterController < ApplicationController
       format.html { render :partial => 'hashtag' }
     end
   end
+
+  protected
+  def handle_service_type
+    "twitter_handle_#{APP_CONFIG['twitter_handle']}"
+  end
+
+  def hash_service_type
+    "twitter_hash_#{APP_CONFIG['twitter_hash']}"
+  end
 end

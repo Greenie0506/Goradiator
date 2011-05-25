@@ -10,7 +10,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110524162101) do
+ActiveRecord::Schema.define(:version => 20110525212714) do
+
+  create_table "api_caches", :force => true do |t|
+    t.string   "service_type"
+    t.string   "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.time     "valid_for"
+  end
 
   create_table "events", :force => true do |t|
     t.datetime "time"

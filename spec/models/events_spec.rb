@@ -36,7 +36,9 @@ describe Events do
     end
 
     it "should be after now" do
-      Time.now.should be < Events.upcoming.time
+      Timecop.freeze Time.now do
+        Time.now.should be < Events.upcoming.time
+      end
     end
   end
 end
