@@ -2,7 +2,7 @@ var countdown; //initial value grabbed in event partial (for page loading conven
 var ms_in_hour = 60 * 60 * 1000;
 
 //times in seconds
-var instagramReload = 20;
+//var instagramReload = 50;
 var foursquareReload = 30;
 var imageCycle = 5;
 
@@ -34,7 +34,7 @@ function reloadSection(selector, url, interval) {
 function init_reloads() {
   reloadSection('#twitterHashtag', '/twitter/hashtag', twitter_hash_reload);
   reloadSection('#twitterHandle', '/twitter/handle', twitter_handle_reload);
-  reloadSection('#instagram', '/instagram', instagramReload * 1000);
+  //reloadSection('#instagram', '/instagram', instagramReload * 1000);
   reloadSection('#foursquare', '/foursquare', foursquareReload * 1000);
 }
 
@@ -55,7 +55,8 @@ setInterval(function () {
 setInterval(function(){
   var visibleImage = $('#instagram ul li.visible');
   if (visibleImage.is($('#instagram ul li:last'))) {
-    $('#instagram ul li:first').toggleClass('hidden').toggleClass('visible');
+    //$('#instagram ul li:first').toggleClass('hidden').toggleClass('visible');
+    $('#instagram').load('/instagram');
   } else {
     visibleImage.next().toggleClass('hidden').toggleClass('visible');
   }
