@@ -40,8 +40,12 @@ h3 { font-size: 2em; }
   font-weight: bold;
 }
 
-#no_instagram, #no_checkins, #noTweets {
+#no_instagram, #noTweets {
   float: left;
+  padding: 20px 0;
+}
+
+#no_checkins {
   padding: 20px 0;
 }
 
