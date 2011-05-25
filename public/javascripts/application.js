@@ -51,7 +51,7 @@ setInterval(function () {
   visibleSponsor.toggleClass('hidden').toggleClass('visible');
 }, imageCycle * 1000);
 
-//cycle images (sponsor and photo stream)
+//cycle instagram images 
 setInterval(function(){
   var visibleImage = $('#instagram ul li.visible');
   if (visibleImage.is($('#instagram ul li:last'))) {

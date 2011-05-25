@@ -7,9 +7,11 @@ foursquare_oauth_token: VSKP32HTB1X1TX51ORO1LQVUOLNXR1OMTEFPCE3VM3RYFBN1
 
 sponsors:
   -
-    logo: pivotallabs-logo.png
+    logo: bluebox.png
   -
-    logo: engine-yard-logo.png
+    logo: pivotal.png
+  -
+    logo: efficiency.png
 
 events:
   -

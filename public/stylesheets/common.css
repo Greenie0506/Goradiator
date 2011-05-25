@@ -5,6 +5,7 @@
 
 body {
   font-size: 12px;
+ font-family: "Helvetica", Arial, sans-serif;
   background: url(../images/bg.png) repeat;
 }
 
@@ -20,12 +21,12 @@ h3 { font-size: 2em; }
 }
 
 #twitter table img {
-  margin: 0 8px 0 0;
-  width: 48px;
+  margin: 0 0.5em 0 0;
+  width: 4em;
 }
 
 #twitter td {
-  padding: 0 0 5px 0;
+  padding: 0 0 0.5em 0;
   vertical-align: top;
 }
 

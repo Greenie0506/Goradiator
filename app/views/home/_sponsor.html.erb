@@ -1,7 +1,7 @@
 <ul id="sponsor">
   <% @sponsors.each_with_index do |sponsor, i| %>
     <li class="<%= i == 0 ? "visible" : "hidden" %>">
-    <%= image_tag "#{sponsor['logo']}" %>
+    <%= image_tag "sponsors/#{sponsor['logo']}" %>
     </li>
   <% end %>
 </ul>
