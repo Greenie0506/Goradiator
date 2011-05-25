@@ -2,18 +2,25 @@ require 'spec_helper'
 
 describe Events do
   context "creating an event" do
-    before do
-      @event = Factory.build(:events)
-    end
-
-    it "should not be nil" do
-      @event.valid?.should be(true)
+    it "should be possible" do
+      event = Factory.build(:events)
+      event.should be_valid
     end
 
     it "should have a name and time" do
-      @event.title = "How to run a bannana stand"
-      @event.time = Time.now
-      @event.valid?.should be(true)
+      no_title = Factory.build(:events, :title => nil)
+      no_time = Factory.build(:events, :time => nil)
+
+      no_title.should_not be_valid
+      no_time.should_not be_valid
+    end
+
+    it "should have a unique time" do
+      now = Time.now
+      event1 = Factory(:events, :time => now)
+      event2 = Factory.build(:events, :time => now)
+
+      event2.should_not be_valid
     end
   end
 
