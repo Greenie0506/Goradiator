@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe TwitterController do
-  context "loading Twitter content" do
+  context "there are recent tweets" do
     before :each do
       @twitter_search = double()
       Twitter::Search.stub(:new) { @twitter_search }
@@ -31,6 +31,28 @@ describe TwitterController do
       get :handle
 
       assigns(:handle_tweets).should == "Fake Tweet"
+    end
+  end
+
+  context "there are no recent tweets" do
+    render_views
+
+    it "should not display any handle content" do
+      twitter_search = double()
+      Twitter::Search.stub(:new) { twitter_search }
+      twitter_search.stub(:clear)
+      twitter_search.stub_chain(
+        :from, 
+        :result_type, 
+        :per_page, 
+        :fetch
+      ).and_return([])
+      
+      get :handle
+
+      assigns(:handle_tweets).should == []
+      doc = Nokogiri::HTML(response.body)
+      doc.text.should be_empty
     end
   end
 end

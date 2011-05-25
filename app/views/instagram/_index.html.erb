@@ -1,10 +1,10 @@
 <h4>Instagram Tag: <%= APP_CONFIG['instagram_tag'] %></h4>
-<ul>
-  <% @instagram_images.each do |image| %>
-    <li class='hidden'> <%= image_tag image %> </li>
-  <% end %>
-</ul>
-
-<script type="text/javascript">
-  $('#instagram ul li:first').toggleClass('hidden').toggleClass('visible');
-</script>
+<% if @instagram_images.size > 0 %>
+  <ul id="instagram_images">
+    <% @instagram_images.each_with_index do |image, i| %>
+      <li class='<%= i == 0 ? "visible" : "hidden" %>'> <%= image_tag image %> </li>
+    <% end %>
+  </ul>
+<% else %>
+  <span id="no_instagram">Take pictures and tag them "<%= APP_CONFIG['instagram_tag'] %>"</span>
+<% end %>

@@ -1,3 +1,4 @@
+<% if @handle_tweets.size > 0 %>
 <h4 id="twitterText">
   <%= "@#{APP_CONFIG['twitter_handle']}" %>
 </h4>
@@ -10,3 +11,4 @@
     </tr>
   <% end %>
 </table>
+<% end %>

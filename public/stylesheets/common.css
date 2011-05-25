@@ -20,6 +20,11 @@ h3 { font-size: 2em; }
   list-style: none;
 }
 
+#no_instagram {
+  float: left;
+  padding: 20px 0 0 0;
+}
+
 #twitter table img {
   margin: 0 0.5em 0 0;
   width: 4em;
