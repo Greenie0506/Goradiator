@@ -8,7 +8,7 @@ h4 { font-size: 1.1em; }
 /**********************/
 #wrap {
   margin: auto;
-  width: 800px;
+  width: 100%;
 }
 
 #wrap_content {
@@ -32,16 +32,20 @@ h4 { font-size: 1.1em; }
   vertical-align: bottom;
 }
 
+#sponsor li {
+  height: 80px;
+}
+
 #sponsor img {
-  max-width: 350px;
+  max-width: 100%;
   max-height: 75px;
   height: 75px;
-  margin: 15px 0 0 7px;
+  margin: 10px 10px 0 7px;
 }
 
 #logo {
-  width:350px;
-  height:87px;
+  max-width: 350px;
+  height: 80px;
 }
 
 /**********************/
@@ -54,7 +58,7 @@ h4 { font-size: 1.1em; }
 
 #user_content {
   float: left;
-  margin: 0 0 10px 0;
+  margin: 0 0;
   width: 100%;
 }
 
@@ -90,5 +94,5 @@ h4 { font-size: 1.1em; }
 }
 
 #foursquare .tiny {
-  width: 30px;
+  width: 25px;
 }
