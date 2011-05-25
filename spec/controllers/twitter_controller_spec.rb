@@ -36,12 +36,13 @@ describe TwitterController do
 
   context "there are no recent tweets" do
     render_views
-
+    before :each do
+      @twitter_search = double()
+      Twitter::Search.stub(:new) { @twitter_search }
+      @twitter_search.stub(:clear)
+    end
     it "should not display any handle content" do
-      twitter_search = double()
-      Twitter::Search.stub(:new) { twitter_search }
-      twitter_search.stub(:clear)
-      twitter_search.stub_chain(
+      @twitter_search.stub_chain(
         :from, 
         :result_type, 
         :per_page, 
@@ -53,6 +54,20 @@ describe TwitterController do
       assigns(:handle_tweets).should == []
       doc = Nokogiri::HTML(response.body)
       doc.text.should be_empty
+    end
+
+    it "should give a message if no hashtag content" do
+      @twitter_search.stub_chain(
+        :hashtag, 
+        :result_type, 
+        :per_page, 
+        :fetch
+      ).and_return([])
+      get :hashtag
+      
+      assigns(:hashtag_tweets).should == []
+      doc = Nokogiri::HTML(response.body)
+      doc.css("#noTweets").text.should == "Tweet with \"#goruco\""
     end
   end
 end

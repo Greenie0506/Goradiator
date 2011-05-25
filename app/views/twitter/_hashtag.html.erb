@@ -1,9 +1,13 @@
 <h4><%= "\##{APP_CONFIG['twitter_hashtag']}" %></h4>
-<table>
+<% if @hashtag_tweets.size > 0 %>
+  <table>
   <% @hashtag_tweets.each do |r| %>
     <tr>
       <td><%= image_tag r.profile_image_url %></td>
       <td><span id="twitterUser"><%= "#{r.from_user}"%></span>: <%="#{r.text}" %></td>
     </tr>
   <% end %>
-</table>
+  </table>
+<% else %>
+  <span id="noTweets">Tweet with "#<%= APP_CONFIG['twitter_hashtag'] %>"</span>
+<% end %>

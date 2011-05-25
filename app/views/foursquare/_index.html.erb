@@ -1,4 +1,8 @@
 <h4>People Checked In</h4>
+<% if @foursquare_herenow.size > 0 %>
 <% @foursquare_herenow.each do |herenow| %>
   <%= avatar herenow['user']['photo'], @foursquare_herenow.length %>
+<% end %>
+<% else %>
+  <span id="no_checkins">Check into <%= APP_CONFIG['foursquare_venue_name'] %> on foursquare</span>
 <% end %>

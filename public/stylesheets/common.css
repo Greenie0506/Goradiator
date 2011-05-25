@@ -39,6 +39,11 @@ h3 { font-size: 2em; }
   font-weight: bold;
 }
 
+#no_instagram, #no_checkins, #noTweets {
+  float: left;
+  padding: 20px 0;
+}
+
 .hidden {
   display: none;
 }
