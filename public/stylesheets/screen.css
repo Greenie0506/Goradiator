@@ -13,17 +13,8 @@ h4 { font-size: 1.1em; }
   -moz-box-shadow: 0 0 10px 1px #bbb;
   -webkit-box-shadow: 0 0 10px 1px #bbb;
   box-shadow: 0 0 7px .5px #bbb;
-  -moz-border-radius-bottomright: 10px;
-  border-bottom-right-radius: 10px;
-  -moz-border-radius-bottomleft: 10px;
-  border-bottom-left-radius: 10px;
-  -moz-border-radius-topright: 10px;
-  border-top-right-radius: 10px;
-  -moz-border-radius-topleft: 10px;
-  border-top-left-radius: 10px;
-
-
-
+  -moz-border-radius: 10px;
+  border-radius: 10px;
 }
 
 #wrap_content {
@@ -99,16 +90,30 @@ h4 { font-size: 1.1em; }
 #instagram img {
   margin: 5px 0 0 0;
   width: 350px;
-  -moz-border-radius-bottomright: 10px;
-  border-bottom-right-radius: 10px;
-  -moz-border-radius-bottomleft: 10px;
-  border-bottom-left-radius: 10px;
-  -moz-border-radius-topright: 10px;
-  border-top-right-radius: 10px;
-  -moz-border-radius-topleft: 10px;
-  border-top-left-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+ }
 
+ #no_instagram {
+   margin: 10px 0 20px 0;
+   padding: 50px 50px 10px 50px;
+   height: 290px;
+   width: 250px;
+   text-align: center;
+   border: 1px solid black;
+   -moz-border-radius: 10px;
+   border-radius: 10px;
+}
 
+#noTweets {
+  padding: 70px 5px 10px 5px;
+  height: 270px;
+  width: 340px;
+  text-align: center;
+}
+
+#no_checkins {
+  padding: 40px 0;
 }
 
 #foursquare .normal {
@@ -124,24 +129,12 @@ h4 { font-size: 1.1em; }
 }
 
 td img{
-    -moz-border-radius-bottomright: 3px;
-  border-bottom-right-radius: 3px;
-  -moz-border-radius-bottomleft: 3px;
-  border-bottom-left-radius: 3px;
-  -moz-border-radius-topright: 3px;
-  border-top-right-radius: 3px;
-  -moz-border-radius-topleft: 3px;
-  border-top-left-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
 }
 
 #foursquare img{
-    -moz-border-radius-bottomright: 3px;
-  border-bottom-right-radius: 3px;
-  -moz-border-radius-bottomleft: 3px;
-  border-bottom-left-radius: 3px;
-  -moz-border-radius-topright: 3px;
-  border-top-right-radius: 3px;
-  -moz-border-radius-topleft: 3px;
-  border-top-left-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
 }
 
