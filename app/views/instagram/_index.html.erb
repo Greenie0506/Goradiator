@@ -1,8 +1,8 @@
-<h4>Instagram Tag: <%= APP_CONFIG['instagram_tag'] %></h4>
+<h4>Instagram Tag: #<%= @instagram_tag %></h4>
 <% if @instagram_images.size > 0 %>
   <ul id="instagram_images">
-    <% @instagram_images.each_with_index do |image, i| %>
-      <li class='<%= i == 0 ? "visible" : "hidden" %>'> <%= image_tag image %> </li>
+    <% @instagram_images.first(10).each_with_index do |image, i| %>
+      <li class='<%= i == 0 ? "visible" : "hidden" %>'> <%= image_tag image["images"]["standard_resolution"]["url"] %> </li>
     <% end %>
   </ul>
 <% else %>

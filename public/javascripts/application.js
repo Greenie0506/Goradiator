@@ -1,20 +1,12 @@
 var loader = {};
 var image_cycle = {};
 var countdown; //initial value grabbed in event partial (for page loading convenience)
-var ms_in_hour = 60 * 60 * 1000;
 
 //times in seconds
-var instagramReload = 50;
 var foursquareReload = 30;
 var imageCycle = 5;
-
-// per/hour
-var twitter_max = 130;
-var twitter_hash_percent = .75;
-var twitter_hash_max = twitter_max * twitter_hash_percent;
-var twitter_handle_max = twitter_max - twitter_hash_max;
-var twitter_hash_reload = ms_in_hour / twitter_hash_max;
-var twitter_handle_reload = ms_in_hour / twitter_handle_max;
+var twitterHashtagReload  = 1;
+var twitterHandleReload = 5;
 
 $(document).ready(init_reloads);
 
@@ -42,10 +34,10 @@ function load_instagram() {
 function init_reloads() {
   load_section('#event', '/events');
   load_section('#twitterHashtag', '/twitter/hashtag', {
-    interval: twitter_hash_reload
+    interval: twitterHashtagReload * 1000
   });
   load_section('#twitterHandle', '/twitter/handle', {
-    interval: twitter_handle_reload
+    interval: twitterHandleReload * 1000
   });
   load_instagram();
   load_section('#foursquare', '/foursquare', {

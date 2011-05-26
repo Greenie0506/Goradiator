@@ -14,4 +14,5 @@ group :test, :development do
   gem 'factory_girl'
   gem 'ruby-debug19'
   gem 'fuubar'
+  gem 'timecop'
 end

@@ -1,33 +1,91 @@
 require 'spec_helper'
 
 describe InstagramController do
-  context "loading Instagram images" do
-    render_views
+render_views
+  before do
+    @http_client_dbl = double()
+    HTTPClient.stub(:new) {@http_client_dbl}
 
-    before :each do
-      instagram_client = double()
-      HTTPClient.stub(:new) {instagram_client}
-      @instagram_response = double()
-      instagram_client.stub(:get_content).and_return(@instagram_response)
-      JSON.stub(:parse).and_return(@instagram_response)
+    @instagram_dbl = {'images' => {'standard_resolution' => {'url' => 'newfake.jpg'} } }
+    @instagram_dbl_cached = {'images' => {'standard_resolution' => {'url' => 'cachedfake.jpg'} } }
+    @api_response = {'data' => [@instagram_dbl, @instagram_dbl]}
+    @cache_response = {'data' => {'data' => [@instagram_dbl_cached, @instagram_dbl_cached]} }
+    @cache_response.stub(:data).and_return(@cache_response['data'])
+    @cache_response.stub(:delete)
+    @empty_response = {'data' => []}
+
+    JSON.stub(:parse).with(@api_response).and_return(@api_response)
+    JSON.stub(:parse).with(@cache_response.data).and_return(@cache_response.data)
+    JSON.stub(:parse).with(@empty_response).and_return(@empty_response)
+
+    ApiCache.stub(:create)
+  end
+
+  context "there are Instagram images" do
+    before do
+      @http_client_dbl.stub(:get_content).and_return(@api_response)
     end
-    
-    it "should get the most recent instagram photos with the tag" do
-      instagram_images = ["Fake image"]
-      @instagram_response.stub_chain(:[], :first, :collect).and_return(instagram_images)
-      get :index
-      
-      assigns(:instagram_images).should include("Fake image")
+
+    context "there is valid data in the cache" do
+      before do
+        ApiCache.stub(:find_by_service_type).and_return(@cache_response)
+        @cache_response.stub(:is_expired?).and_return(false)
+      end
+
+      it "should get the data in the cache and return an array of (cached) image urls" do
+        get 'index'
+        assigns(:instagram_images).should == @cache_response.data['data']
+      end
+    end
+
+    context "there is expired data in the cache" do
+      before do
+        ApiCache.stub(:find_by_service_type).and_return(@cache_response)
+        @cache_response.stub(:is_expired?).and_return(true)
+      end
+
+      it "should get the data from instagram and return an array of (new) image urls" do
+        get 'index'
+        assigns(:instagram_images).should == @api_response['data']
+      end
+
+      it "should store the data in the cache" do
+        @cache_response.should_receive(:delete)
+        ApiCache.should_receive(:create)
+        get 'index'
+      end
+    end
+
+    context "there is no data in the cache" do
+      before do
+        ApiCache.stub(:find_by_service_type).and_return(nil)
+      end
+
+      it "should get the data from instagram and return an array of (new) image urls" do
+        get 'index'
+        assigns(:instagram_images).should == @api_response['data'] 
+      end
+
+      it "should store the data in the cache" do
+        ApiCache.should_receive(:create)
+        get 'index'
+      end
+    end
+  end
+
+  context "there are no Instagram images" do
+
+    before do
+      ApiCache.stub(:find_by_service_type).and_return(nil)
+      @http_client_dbl.stub(:get_content).and_return(@empty_response)
     end
 
     it "should show a notice when there are no instagram images" do
-      instagram_images = []
-      @instagram_response.stub_chain(:[], :first, :collect).and_return(instagram_images)
       get :index
 
       doc = Nokogiri::HTML(response.body)
       doc.css("#no_instagram").text.should == "Take pictures and tag them \"goruco\""
       doc.css("#instagram_images").should_not be_present
-    end
+    end 
   end
 end

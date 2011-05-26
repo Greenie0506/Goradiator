@@ -1,8 +1,11 @@
 class TwitterController < ApplicationController
   def handle
-    search = Twitter::Search.new
-    recent_tweets = search.from(APP_CONFIG['twitter_handle']).result_type("recent")
-    @handle_tweets = recent_tweets.per_page(1).fetch
+    @twitter_handle = APP_CONFIG['twitter_handle']
+    service_type = "twitter_handle_#{@twitter_handle}"
+    twitter_query = "from%3A#{@twitter_handle}"
+    valid_for = 15 #in seconds
+    data = cache_data(service_type, twitter_query, valid_for)
+    @handle_tweets = JSON.parse(data)['results']
 
     respond_to do |format|
       format.html { render :partial => 'handle' }
@@ -10,12 +13,38 @@ class TwitterController < ApplicationController
   end
 
   def hashtag
-    search = Twitter::Search.new
-    recent_hash_tweets = search.hashtag(APP_CONFIG['twitter_hashtag']).result_type("recent")
-    @hashtag_tweets = recent_hash_tweets.per_page(5).fetch
+    @twitter_hashtag = APP_CONFIG['twitter_hashtag']
+    service_type = "twitter_hashtag_#{@twitter_hashtag}"
+    twitter_query = "%23#{@twitter_hashtag}"
+    valid_for = 5 #in seconds
+    data = cache_data(service_type, twitter_query, valid_for)
+    @hashtag_tweets = JSON.parse(data)['results']
 
     respond_to do |format|
       format.html { render :partial => 'hashtag' }
     end
+  end
+
+  protected
+  def twitter_call twitter_query
+    tw_url = "http://search.twitter.com/search.json?q=#{twitter_query}&result_type=recent&rpp=5"
+    http_client = HTTPClient.new
+    return http_client.get_content(tw_url)
+  end
+
+  def cache_data service_type, twitter_query, valid_for
+    cache = ApiCache.find_by_service_type(service_type)
+    if (cache.nil? || cache.is_expired?)
+      if (not cache.nil?)
+        cache.delete
+      end
+      data = twitter_call twitter_query
+      ApiCache.create(:service_type => service_type,
+                      :valid_for => valid_for,
+                      :data => data)
+    else
+      data = cache.data
+    end
+    return data
   end
 end

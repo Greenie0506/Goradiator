@@ -3,3 +3,4 @@ Factory.define :events do |e|
   e.title "Nicholas Greenfield is the best"
   e.speaker "Nicholas Greenfield"
 end
+

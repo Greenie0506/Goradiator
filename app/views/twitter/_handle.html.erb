@@ -1,13 +1,13 @@
 <% if @handle_tweets.size > 0 %>
 <h4 id="twitterText">
-  <%= "@#{APP_CONFIG['twitter_handle']}" %>
+  <%= "@#{@twitter_handle}" %>
 </h4>
 
 <table>
   <% @handle_tweets.each do |r| %>
     <tr>
-      <td><%= image_tag r.profile_image_url %></td>
-      <td><%= "#{r.text}" %></td>
+      <td><%= image_tag r['profile_image_url'] %></td>
+      <td>#<%= r['text'] %></td>
     </tr>
   <% end %>
 </table>
