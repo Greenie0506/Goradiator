@@ -116,7 +116,7 @@ describe TwitterController do
 
       assigns(:hashtag_tweets).should == []
       doc = Nokogiri::HTML(response.body)
-      doc.css("#noTweets").text.should == "Tweet with \"#goruco\""
+      doc.css("#noTweets").text.should include("Tweet with")
     end
   end
 

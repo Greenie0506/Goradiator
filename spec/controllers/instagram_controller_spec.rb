@@ -84,7 +84,7 @@ render_views
       get :index
 
       doc = Nokogiri::HTML(response.body)
-      doc.css("#no_instagram").text.should == "Take pictures and tag them \"goruco\""
+      doc.css("#no_instagram").text.should include("Take pictures and tag them")
       doc.css("#instagram_images").should_not be_present
     end 
   end
