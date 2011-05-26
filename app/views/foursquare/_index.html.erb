@@ -4,5 +4,5 @@
   <%= avatar herenow['user']['photo'], @foursquare_herenow.length %>
 <% end %>
 <% else %>
-  <span id="no_checkins">Check into <%= APP_CONFIG['foursquare_venue_name'] %> on foursquare</span>
+  <span id="no_checkins">Check into <%= @fsq_venue_name %> on foursquare</span>
 <% end %>
