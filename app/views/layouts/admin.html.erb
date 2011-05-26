@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GorucoRadiator</title>
+    <%= stylesheet_link_tag "common", :media => :all %>
+    <%= stylesheet_link_tag "screen", :media => "screen and (min-device-width: 481px)" %>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <%= csrf_meta_tag %>
+  </head>
+  <body>
+    <%= yield %>
+  </body>
+</html>
+

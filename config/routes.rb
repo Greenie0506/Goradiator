@@ -5,6 +5,11 @@ GorucoRadiator::Application.routes.draw do
               :path_names => { :sign_in => "" }, 
               :controllers => { :sessions => "admins/sessions" }
 
+  
+  #resources :manage, :only => "index"
+  scope :path => :admins, :module => "admins" do
+    resource :manages
+  end
   resources :events, :only => "index"
   resources :twitter, :only => "" do
       get 'hashtag', :on => :collection
