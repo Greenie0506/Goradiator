@@ -3,7 +3,7 @@ class TwitterController < ApplicationController
     @twitter_handle = APP_CONFIG['twitter_handle']
     service_type = "twitter_handle_#{@twitter_handle}"
     twitter_query = "from%3A#{@twitter_handle}"
-    valid_for = 5 #in seconds
+    valid_for = 15 #in seconds
     data = cache_data(service_type, twitter_query, valid_for)
     @handle_tweets = JSON.parse(data)['results']
 
@@ -16,7 +16,7 @@ class TwitterController < ApplicationController
     @twitter_hashtag = APP_CONFIG['twitter_hashtag']
     service_type = "twitter_hashtag_#{@twitter_hashtag}"
     twitter_query = "%23#{@twitter_hashtag}"
-    valid_for = 10 #in seconds
+    valid_for = 5 #in seconds
     data = cache_data(service_type, twitter_query, valid_for)
     @hashtag_tweets = JSON.parse(data)['results']
 
