@@ -5,8 +5,9 @@ class Admins::ManagesController < ApplicationController
 
   def show 
     config = YAML.load_file("config/config.yml")
+
     @conference = Conference.new
-    @conference.twitter_handle = config[:twitter_handle]
-    @conference.twitter_hash = config[:twitter_hash]
+    @conference.twitter_handle = config["twitter_handle"]
+    @conference.twitter_hash = config["twitter_hash"]
   end
 end
