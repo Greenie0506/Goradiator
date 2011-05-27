@@ -15,9 +15,10 @@ class FoursquareController < ApplicationController
 
   private
   def foursquare_call fsq_venue_id
-    in_url = "https://api.foursquare.com/v2/venues/#{fsq_venue_id}/herenow?oauth_token=#{APP_CONFIG['foursquare_oauth_token']}" 
+    fsq_url = "https://api.foursquare.com/v2/venues/#{fsq_venue_id}/herenow?oauth_token=#{APP_CONFIG['foursquare_oauth_token']}" 
+    logger.info "Foursquare API request: " + fsq_url 
     http_client = HTTPClient.new
-    return http_client.get_content(in_url)
+    return http_client.get_content(fsq_url)
   end
 
   def cache_data service_type, fsq_venue_id, valid_for

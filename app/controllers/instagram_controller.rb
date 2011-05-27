@@ -14,10 +14,7 @@ class InstagramController < ApplicationController
   private
   def instagram_call instagram_tag
     in_url = "https://api.instagram.com/v1/tags/#{instagram_tag}/media/recent?client_id=#{APP_CONFIG['instagram_client_id']}"
-    
-    logger.info "+++++++++++++INSTA URL: " + in_url
-    
-    
+    logger.info "Instagram API request: " + in_url 
     http_client = HTTPClient.new
     return http_client.get_content(in_url)
   end

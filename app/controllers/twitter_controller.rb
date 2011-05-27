@@ -30,6 +30,7 @@ class TwitterController < ApplicationController
   protected
   def twitter_call twitter_query, num_tweets
     tw_url = "http://search.twitter.com/search.json?q=#{twitter_query}&result_type=recent&rpp=#{num_tweets}"
+    logger.info "Twitter API request: " + tw_url 
     http_client = HTTPClient.new
     return http_client.get_content(tw_url)
   end
