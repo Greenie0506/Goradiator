@@ -19,6 +19,12 @@
 
         <%= yield %>
       </div>
+
+      <% if admin_signed_in? %>
+        <div id="signout">
+          <%= link_to "Sign Out", destroy_admin_session_path %>
+        </div>
+      <% end %>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
     <%= javascript_include_tag 'application' %>

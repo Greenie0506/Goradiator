@@ -28,6 +28,11 @@
     <label>Foursquare Oauth Token</label>
     <%= f.text_field :foursquare_oauth_token %>
     </p>
+
     <%= f.submit "Update Radiator!" %>
   <% end %>
+</div>
+
+<div id="signout">
+  <%= link_to 'Sign Out', destroy_admin_session_path %>
 </div>

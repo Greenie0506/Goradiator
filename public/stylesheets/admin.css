@@ -14,11 +14,15 @@ p {
 
 }
 
-#conference {
+#content {
   padding: 50px;
 }
 
-#conference label {
+#signout {
+  padding: 20px 0;
+}
+
+#content label {
   float: left;
   font-weight: bold;
   width: 150px;
