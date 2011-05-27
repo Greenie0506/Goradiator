@@ -1,0 +1,25 @@
+p {
+  padding: 5px 0;
+}
+
+#wrapper {
+  width:280px;
+  background: #fff;
+  margin:200px auto;
+  -moz-box-shadow: 0 0 10px 1px #bbb;
+  -webkit-box-shadow: 0 0 10px 1px #bbb;
+  box-shadow: 0 0 7px .5px #bbb;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+
+}
+
+#conference {
+  padding: 50px;
+}
+
+#conference label {
+  float: left;
+  font-weight: bold;
+  width: 150px;
+}
