@@ -1,65 +1,63 @@
 --- !map:ActiveSupport::HashWithIndifferentAccess 
-twitter_handle: ladygaga
+twitter_handle: goruco
 twitter_hashtag: goruco
 instagram_hashtag: goruco
 instagram_client_id: e274913172cd4e75a81d3981159c6938
 foursquare_venue_id: "46651"
 foursquare_venue_name: Pace University
 foursquare_oauth_token: VSKP32HTB1X1TX51ORO1LQVUOLNXR1OMTEFPCE3VM3RYFBN1
-
-sponsors:
-  -
-    logo: bluebox.png
-  -
-    logo: pivotal.png
-  -
-    logo: efficiency.png
-  -
-    logo: heroku.png
-  -
-    logo: engine-yard.png
-
-events:
-  -
-    time: 2011-6-4 9:00:00 -0400
-    title: Registration and Breakfast
-  -
-    time: 2011-6-4 9:45:00 -0400
-    title: Opening Remarks
-  -
-    time: 2011-6-4 10:00:00 -0400
-    title: Fewer Constraints More Concurrency
-    speaker: Ryan Smith
-  -
-    time: 2011-6-4 10:55:00 -0400
-    title: Less - The Path to Better Design
-    speaker: Sandi Metz
-  -
-    time: 2011-6-4 11:50:00 -0400
-    title: Blow Up Your Views
-    speaker: Jeff Casimir
-  -
-    time: 2011-6-4 12:35:00 -0400
-    title: Lunch
-  -
-    time: 2011-6-4 13:45:00 -0400
-    title: "HysteriaEngine: Ruby Does Violence in the Name of Science"
-    speaker: Casey Rosenthal
-  -
-    time: 2011-6-4 14:40:00 -0400
-    title: CoffeeScript
-    speaker: Jeremy Ashkenas
-  -
-    time: 2011-6-4 15:25:00 -0400
-    title: Break
-  -
-    time: 2011-6-4 10:55:00 -0400
-    title: "Kicking it old school: How your relation database's built-in features can make your code cleaner and your application faster"
-    speaker: John Crepezzi & Mat Brown
-  -
-    time: 2011-6-4 10:55:00 -0400
-    title: Something Awesome
-    speaker: Evan Phoenix
-  -
-    time: 2011-6-4 10:55:00 -0400
-    title: RejectConf
+sponsors: 
+- !map:ActiveSupport::HashWithIndifferentAccess 
+  logo: bluebox.png
+- !map:ActiveSupport::HashWithIndifferentAccess 
+  logo: pivotal.png
+- !map:ActiveSupport::HashWithIndifferentAccess 
+  logo: efficiency.png
+- !map:ActiveSupport::HashWithIndifferentAccess 
+  logo: heroku.png
+- !map:ActiveSupport::HashWithIndifferentAccess 
+  logo: engine-yard.png
+events: 
+- !map:ActiveSupport::HashWithIndifferentAccess 
+  time: 2011-6-4 9:00:00 -0400
+  title: Registration and Breakfast
+- !map:ActiveSupport::HashWithIndifferentAccess 
+  time: 2011-6-4 9:45:00 -0400
+  title: Opening Remarks
+- !map:ActiveSupport::HashWithIndifferentAccess 
+  time: 2011-6-4 10:00:00 -0400
+  title: Fewer Constraints More Concurrency
+  speaker: Ryan Smith
+- !map:ActiveSupport::HashWithIndifferentAccess 
+  time: 2011-6-4 10:55:00 -0400
+  title: Less - The Path to Better Design
+  speaker: Sandi Metz
+- !map:ActiveSupport::HashWithIndifferentAccess 
+  time: 2011-6-4 11:50:00 -0400
+  title: Blow Up Your Views
+  speaker: Jeff Casimir
+- !map:ActiveSupport::HashWithIndifferentAccess 
+  time: 2011-6-4 12:35:00 -0400
+  title: Lunch
+- !map:ActiveSupport::HashWithIndifferentAccess 
+  time: 2011-6-4 13:45:00 -0400
+  title: "HysteriaEngine: Ruby Does Violence in the Name of Science"
+  speaker: Casey Rosenthal
+- !map:ActiveSupport::HashWithIndifferentAccess 
+  time: 2011-6-4 14:40:00 -0400
+  title: CoffeeScript
+  speaker: Jeremy Ashkenas
+- !map:ActiveSupport::HashWithIndifferentAccess 
+  time: 2011-6-4 15:25:00 -0400
+  title: Break
+- !map:ActiveSupport::HashWithIndifferentAccess 
+  time: 2011-6-4 10:55:00 -0400
+  title: "Kicking it old school: How your relation database's built-in features can make your code cleaner and your application faster"
+  speaker: John Crepezzi & Mat Brown
+- !map:ActiveSupport::HashWithIndifferentAccess 
+  time: 2011-6-4 10:55:00 -0400
+  title: Something Awesome
+  speaker: Evan Phoenix
+- !map:ActiveSupport::HashWithIndifferentAccess 
+  time: 2011-6-4 10:55:00 -0400
+  title: RejectConf
