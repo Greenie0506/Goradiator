@@ -10,15 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110526151843) do
-
-  create_table "api_caches", :force => true do |t|
-    t.string   "service_type"
-    t.string   "data"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.time     "valid_for"
-  end
+ActiveRecord::Schema.define(:version => 20110527154838) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                             :default => "", :null => false
@@ -36,6 +28,14 @@ ActiveRecord::Schema.define(:version => 20110526151843) do
   end
 
   add_index "admins", ["email"], :name => "index_admins_on_email", :unique => true
+
+  create_table "api_caches", :force => true do |t|
+    t.string   "service_type"
+    t.text     "data",         :limit => 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "valid_for"
+  end
 
   create_table "events", :force => true do |t|
     t.datetime "time"
