@@ -1,0 +1,6 @@
+<%= form_for @conference, :url => { :action => "update"} do |f| %>
+  <label>Twitter Handle:</label>
+  <%= f.text_field :twitter_handle %><br />
+  <label>Twitter Hashtag </label>
+  <%= f.text_field :twitter_hashtag %>
+<% end %>

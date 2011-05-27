@@ -1,4 +1,15 @@
 GorucoRadiator::Application.routes.draw do
+  devise_for  :admins,
+              :controllers => { :sessions => "admins/sessions" }
+  devise_for  :admins,
+              :path => "admin", 
+              :path_names => { :sign_in => "" }, 
+              :controllers => { :sessions => "admins/sessions" }
+
+  #resources :manage, :only => "index"
+  scope :path => :admins, :module => "admins" do
+    resource :manages
+  end
   resources :events, :only => "index"
   resources :twitter, :only => "" do
       get 'hashtag', :on => :collection
@@ -33,7 +44,7 @@ GorucoRadiator::Application.routes.draw do
   #   end
 
   # Sample resource route with sub-resources:
-  #   resources :products do
+  #   resources :producdevise_for :adminsts do
   #     resources :comments, :sales
   #     resource :seller
   #   end
