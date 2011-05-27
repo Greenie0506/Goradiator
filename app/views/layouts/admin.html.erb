@@ -6,6 +6,7 @@
     <%= stylesheet_link_tag "screen", :media => "screen and (min-device-width: 481px)" %>
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <%= csrf_meta_tag %>
+    <%= javascript_include_tag 'jquery', 'rails.validations' -%>
   </head>
   <body>
     <%= yield %>

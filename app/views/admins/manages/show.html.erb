@@ -1,6 +1,31 @@
-<%= form_for @conference, :url => { :action => "update"} do |f| %>
-  <label>Twitter Handle:</label>
-  <%= f.text_field :twitter_handle %><br />
-  <label>Twitter Hashtag </label>
-  <%= f.text_field :twitter_hashtag %>
+<%= form_for @conference, :url => manages_path(@conference), :html => { :method => :put } do |f| %>
+  <p>
+    <label>Twitter Handle:</label>
+    <%= f.text_field :twitter_handle %>
+  </p>
+  <p>
+    <label>Twitter Hashtag:</label>
+    <%= f.text_field :twitter_hashtag %>
+  </p>
+  <p>
+    <label>Instagram Hashtag:</label>
+    <%= f.text_field :instagram_hashtag %>
+  </p>
+  <p>
+    <label>Instagram Client Id:</label>
+    <%= f.text_field :instagram_client_id %>
+  </p>
+  <p>
+    <label>Foursquare Venue Id</label>
+    <%= f.text_field :foursquare_venue_id %>
+  </p>
+  <p>
+    <label>Foursquare Venue Name</label>
+    <%= f.text_field :foursquare_venue_name %>
+  </p>
+  <p>
+    <label>Foursquare Oauth Token</label>
+    <%= f.text_field :foursquare_oauth_token %>
+  </p>
+  <%= f.submit %>
 <% end %>
