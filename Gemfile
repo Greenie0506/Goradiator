@@ -11,6 +11,7 @@ gem 'httpclient'
 gem 'json'
 gem 'nokogiri'
 gem 'devise'
+gem 'client_side_validations'
 group :test, :development do
   gem 'rspec-rails', '~> 2.4'
   gem 'factory_girl'

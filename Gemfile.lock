@@ -34,6 +34,8 @@ GEM
     awesome_print (0.4.0)
     bcrypt-ruby (2.1.4)
     builder (2.1.2)
+    client_side_validations (3.0.4)
+      activesupport (~> 3.0.0)
     columnize (0.3.2)
     devise (1.3.4)
       bcrypt-ruby (~> 2.1.2)
@@ -145,6 +147,7 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
+  client_side_validations
   devise
   factory_girl
   fuubar
