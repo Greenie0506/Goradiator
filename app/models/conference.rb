@@ -4,7 +4,7 @@ class Conference
   extend ActiveModel::Naming
 
   attr_accessor :twitter_handle, 
-                :twitter_hash, 
+                :twitter_hashtag, 
                 :instagram_tag, 
                 :instagram_clent_id, 
                 :events, 

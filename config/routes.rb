@@ -1,11 +1,11 @@
 GorucoRadiator::Application.routes.draw do
-  devise_for :admins, :controllers => { :sessions => "admins/sessions" }
+  devise_for  :admins,
+              :controllers => { :sessions => "admins/sessions" }
   devise_for  :admins,
               :path => "admin", 
               :path_names => { :sign_in => "" }, 
               :controllers => { :sessions => "admins/sessions" }
 
-  
   #resources :manage, :only => "index"
   scope :path => :admins, :module => "admins" do
     resource :manages
