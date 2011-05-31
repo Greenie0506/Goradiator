@@ -19,3 +19,7 @@ group :test, :development do
   gem 'fuubar'
   gem 'timecop'
 end
+
+group :test do
+  gem 'webmock'
+end

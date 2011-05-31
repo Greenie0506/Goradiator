@@ -16,6 +16,7 @@ GorucoRadiator::Application.routes.draw do
       get 'handle', :on => :collection
   end
   resources :instagram, :only => "index"
+  resources :photo_stream, :only => :index
   resources :foursquare, :only => "index"
   # The priority is based upon order of creation:
   # first created -> highest priority.

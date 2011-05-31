@@ -7,14 +7,7 @@ class FoursquareController < ApplicationController
     data = cache_data(service_type, fsq_venue_id, valid_for)
     data = JSON.parse(data)
     @foursquare_herenow = data['response']['hereNow']['items']
-
-
     
-    fsq_url = "https://api.foursquare.com/v2/venues/search?ll=40.7,-74&oauth_token=GQUMTXRS4MER11IFR1RTRSGK1ZBRZME2TSEZVTOYH1IKBJ1H"
-    http_client = HTTPClient.new
-    venue = http_client.get_content(fsq_url)
-    @locations = JSON.parse(venue)['response']['groups'].collect{|g| g['items'].collect{|i| i['location']}}.flatten
-
     respond_to do |format|
       format.html { render :partial => 'index' }
     end

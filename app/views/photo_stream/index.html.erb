@@ -1,0 +1,11 @@
+<h4>Instagram Tag: #<%= APP_CONFIG['instagram_hashtag'] %></h4>
+<% if @images.size > 0 %>
+  <ul id="instagram_images">
+    <% @images.first(10).each_with_index do |image, i| %>
+      <li class='<%= i == 0 ? "visible" : "hidden" %>'> <%= image_tag image %> </li>
+    <% end %>
+  </ul>
+<% else %>
+  <span id="no_instagram">Take pictures and tag them "#<%= APP_CONFIG['instagram_tag'] %>"</span>
+<% end %>
+

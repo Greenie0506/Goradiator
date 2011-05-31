@@ -1,11 +1,15 @@
 <h4><%= @foursquare_herenow.size %> People Checked Into <%= @fsq_venue_name %></h4>
 <% if @foursquare_herenow.size > 0 %>
-<% @foursquare_herenow.each do |herenow| %>
-  <%= avatar herenow['user']['photo'], @foursquare_herenow.length %>
-<% end %>
+  <% @foursquare_herenow.each do |herenow| %>
+    <%= avatar herenow['user']['photo'], @foursquare_herenow.length %>
+  <% end %>
 <% else %>
   <br />
   <span id="no_checkins">Check into <%= @fsq_venue_name %> on foursquare</span>
 <% end %>
+
+
+
+
 
 

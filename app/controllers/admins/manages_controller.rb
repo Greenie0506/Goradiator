@@ -21,7 +21,7 @@ class Admins::ManagesController < ApplicationController
   end
 
   def update
-    config = YAML.load_file("config/config.yml")
+    config = YAML.load_file("#{Rails.root}/config/config.yml")
 
     @conference = params[:conference]
     @conference["sponsors"] = config["sponsors"]

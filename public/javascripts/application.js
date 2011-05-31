@@ -25,9 +25,9 @@ function load_section(selector, url, opts) {
   }
 }
 
-function load_instagram() {
-  load_section('#instagram', '/instagram', {
-    callback: cycle_instagram
+function load_photos() {
+  load_section("#instagram", "/photo_stream", {
+    callback: cycle_photos
   });
 }
 
@@ -39,19 +39,19 @@ function init_reloads() {
   load_section('#twitterHandle', '/twitter/handle', {
     interval: twitterHandleReload * 1000
   });
-  load_instagram();
+  load_photos();
   load_section('#foursquare', '/foursquare', {
     interval: foursquareReload * 1000
   });
 }
 
-function cycle_instagram() {
+function cycle_photos() {
   clearInterval(image_cycle.instagram);
   image_cycle.instagram = setInterval(function () {
     var visibleImage = $('#instagram ul li.visible');
 
     if (visibleImage.length === 0 || visibleImage.is($('#instagram ul li:last'))) {
-      load_instagram();
+      load_photos();
     }
     else {
       visibleImage.next().toggleClass('hidden').toggleClass('visible');
