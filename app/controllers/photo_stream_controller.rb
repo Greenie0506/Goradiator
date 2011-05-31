@@ -31,7 +31,7 @@ class PhotoStreamController < ApplicationController
     http_client = HTTPClient.new
     venue = http_client.get_content(fsq_url)
     JSON.parse(venue)['response']['photos']['items'].collect do |image|
-      image['url']
+      image['sizes']['items'].detect{|i| i['width'] == 300}['url']
     end
   end
 end

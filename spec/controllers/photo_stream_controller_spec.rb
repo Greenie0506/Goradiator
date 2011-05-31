@@ -4,12 +4,27 @@ describe PhotoStreamController do
   render_views
   before do
     @instagram_response = {'data' => [{'images' => {'standard_resolution' => {'url' => 'new_instant.jpg'}}}] }
-    @foursquare_response = {'response' => {'photos' => {'items' => [{'url' => 'new_4sq.jpg'}]}}}
+    @foursquare_response = {'response' => 
+      {'photos' => 
+        {'items' => 
+          [
+            {'sizes' => 
+              {'items' => 
+                [
+                  {'url' => 'new_4sq300x300.jpg', 'width' => 300, 'height' => 300},
+                  {'url' => 'new_4sq500x500.jpg', 'width' => 500, 'height' => 500}
+                ]
+              }
+            }
+          ]
+        }
+      }
+    }
     stub_request(:get, "https://api.instagram.com/v1/tags/goruco/media/recent?client_id=e274913172cd4e75a81d3981159c6938").
       to_return(:status => 200, :body => @instagram_response.to_json, :headers => {})
 
     stub_request(:get, "https://api.foursquare.com/v2/venues/#{APP_CONFIG['foursquare_venue_id']}/photos?group=venue&oauth_token=GQUMTXRS4MER11IFR1RTRSGK1ZBRZME2TSEZVTOYH1IKBJ1H").
-      to_return(:status => 200, :body => @foursquare_response.to_json, :headers => {})
+    to_return(:status => 200, :body => @foursquare_response.to_json, :headers => {})
 
   end
 
@@ -32,7 +47,7 @@ describe PhotoStreamController do
 
       it "should include images from both 4sq and Instagram" do
         assigns(:images).should include('new_instant.jpg')
-        assigns(:images).should include('new_4sq.jpg')
+        assigns(:images).should include('new_4sq300x300.jpg')
       end
 
       it "should save the images into cache" do
@@ -49,7 +64,7 @@ describe PhotoStreamController do
         get :index
         data = JSON.parse(ApiCache.where(:service_type => "photo_stream").first.data)
         data.should include('new_instant.jpg')
-        data.should include('new_4sq.jpg')
+        data.should include('new_4sq300x300.jpg')
       end
     end
   end
