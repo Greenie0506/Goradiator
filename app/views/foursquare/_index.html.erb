@@ -1,4 +1,4 @@
-<h4><%= @foursquare_herenow.size %> People Checked Into <%= @fsq_venue_name %></h4>
+<h4><%= pluralize(@foursquare_herenow.size, "Person")%> Checked Into <%= @fsq_venue_name %></h4>
 <% if @foursquare_herenow.size > 0 %>
   <% @foursquare_herenow.each do |herenow| %>
     <%= avatar herenow['user']['photo'], @foursquare_herenow.length %>
