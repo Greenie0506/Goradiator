@@ -8,6 +8,13 @@ class FoursquareController < ApplicationController
     data = JSON.parse(data)
     @foursquare_herenow = data['response']['hereNow']['items']
 
+
+    
+    fsq_url = "https://api.foursquare.com/v2/venues/search?ll=40.7,-74&oauth_token=GQUMTXRS4MER11IFR1RTRSGK1ZBRZME2TSEZVTOYH1IKBJ1H"
+    http_client = HTTPClient.new
+    venue = http_client.get_content(fsq_url)
+    @locations = JSON.parse(venue)['response']['groups'].collect{|g| g['items'].collect{|i| i['location']}}.flatten
+
     respond_to do |format|
       format.html { render :partial => 'index' }
     end
@@ -15,8 +22,8 @@ class FoursquareController < ApplicationController
 
   private
   def foursquare_call fsq_venue_id
-    fsq_url = "https://api.foursquare.com/v2/venues/#{fsq_venue_id}/herenow?oauth_token=#{APP_CONFIG['foursquare_oauth_token']}" 
-    logger.info "Foursquare API request: " + fsq_url 
+    fsq_url = "https://api.foursquare.com/v2/venues/#{fsq_venue_id}/herenow?oauth_token=#{APP_CONFIG['foursquare_oauth_token']}"
+    logger.info "Foursquare API request: " + fsq_url
     http_client = HTTPClient.new
     return http_client.get_content(fsq_url)
   end
@@ -36,5 +43,4 @@ class FoursquareController < ApplicationController
     end
     return data
   end
-
 end
