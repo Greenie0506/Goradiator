@@ -33,6 +33,6 @@ class Admins::ManagesController < ApplicationController
 
     File.open("config/config.yml", "w") { |f| YAML.dump(@conference, f) }
 
-    redirect_to :manages
+    redirect_to :root
   end
 end
