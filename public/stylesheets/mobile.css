@@ -1,6 +1,7 @@
 body {
   text-align: center;
   font-size: 50px;
+  background:red;
 }
 
 table {
@@ -32,7 +33,7 @@ h4 { font-size: 1.4em; }
 }
 
 #sponsor {
-  list-style: none;
+  list-style: none;593180
 }
 
 #sponsor img {

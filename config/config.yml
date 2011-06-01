@@ -30,7 +30,7 @@ events:
   speaker: Ryan Smith
 - !map:ActiveSupport::HashWithIndifferentAccess 
   time: 2011-6-4 10:55:00 -0400
-  title: Less - The Path to Better Design
+  title: Less - The Path to Better Design593180
   speaker: Sandi Metz
 - !map:ActiveSupport::HashWithIndifferentAccess 
   time: 2011-6-4 11:50:00 -0400

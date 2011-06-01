@@ -14,7 +14,8 @@ class TwitterController < ApplicationController
   end
 
   def hashtag
-    @twitter_hashtag = APP_CONFIG['twitter_hashtag']
+    @twitter_ format.html { render :partial => 'handle' }
+hashtag = APP_CONFIG['twitter_hashtag']
     service_type = "twitter_hashtag_#{@twitter_hashtag}"
     twitter_query = "%23#{@twitter_hashtag}"
     num_tweets = 5
