@@ -5,8 +5,8 @@ var countdown; //initial value grabbed in event partial (for page loading conven
 //times in seconds
 var foursquareReload = 30;
 var imageCycle = 5;
-var twitterHashtagReload  = 1;
-var twitterHandleReload = 5;
+var twitterHashtagReload  = 10;
+var twitterHandleReload = 15;
 
 $(document).ready(init_reloads);
 
