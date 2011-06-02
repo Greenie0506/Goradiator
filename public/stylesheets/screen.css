@@ -175,6 +175,7 @@ td img{
   -webkit-border-radius:8px;
   background:#fff;
   padding:7px;
+  min-height:76px;
 }
 
 #foursquare{
@@ -206,7 +207,10 @@ td img{
   margin-left:15px;}
 
 #instagram{
-  height:391px;
+  height:391p  -moz-box-shadow: 0 0 5px 1px #ccc;
+  -webkit-box-shadow: 0 0 5px 1px #ccc;
+  box-shadow: 0 0 5px 1px #ccc;
+x;
   -moz-box-shadow: 0 0 5px 1px #ccc;
   -webkit-box-shadow: 0 0 5px 1px #ccc;
   box-shadow: 0 0 5px 1px #ccc;
