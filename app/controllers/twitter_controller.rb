@@ -18,7 +18,7 @@ class TwitterController < ApplicationController
     service_type = "twitter_hashtag_#{@twitter_hashtag}"
     twitter_query = "%23#{@twitter_hashtag}"
     num_tweets = 5
-    valid_for = 5 #in seconds
+    valid_for = 4 #in seconds
     data = cache_data(service_type, twitter_query, valid_for, num_tweets)
     @hashtag_tweets = JSON.parse(data)['results']
 

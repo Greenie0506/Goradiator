@@ -7,7 +7,7 @@
   <% @handle_tweets.each do |r| %>
     <tr>
       <td><%= image_tag r['profile_image_url'] %></td>
-      <td><h4><strong><%= r['text'] %></strong></h4></td>
+      <td><%= r['text'] %></td>
     </tr>
   <% end %>
 </table>
